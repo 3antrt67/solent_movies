@@ -3,7 +3,7 @@ include "database.php";
 
 $name = $_POST["name"];
 $message = $_POST["message"];
-$now = date("Y-m-d h:i:sa");
+$now = date("Y-m-d | h:i:s");
 
 $conn->query("INSERT INTO contact (name, message, contact_date) VALUES('$name', '$message', '$now')");
 
