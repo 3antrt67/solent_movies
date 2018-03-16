@@ -1,9 +1,29 @@
+<!DOCTYPE html>
 <head>
 	<title>Solent Movies</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<h1>Welcome to the Solent Movies page</h1>
-	<p>This is a selection of recent movies...</p>
-	<img src="https://s-media-cache-ak0.pinimg.com/originals/ef/99/21/ef9921c6e8ab7845a64f787622a411d7.jpg" alt="Movie dash" />
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Welcome to the Solent Movies page</h1>
+			<p>This is a selection of recent movies...</p>
+		</div>
+	</div>
+	<div class="container">
+	<form class="form-horizontal" role="form" method="post" action="process_contact.php">
+		<div class="form-group">
+			<h3>Would you like to get in touch?</h3>
+			<label for="name">Name</label>
+			<input type="text" name="name" class="form-control" id="name" placeholder="Please enter your name">
+		</div>
+		<div class="form-group">
+			<label for="message">Please tell me about your query.</label>
+			<textarea class="form-control" id="message" rows="4" name="message"></textarea>
+		</div>
+		<button type="submit" name="submit" id="submit" value="Send" class="btn btn-primary">Submit</button>
+		
 </body>
+</html>
 	
