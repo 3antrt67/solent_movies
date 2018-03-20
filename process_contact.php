@@ -5,9 +5,6 @@ $name = $_POST["name"];
 $message = $_POST["message"];
 $now = date("Y-m-d | h:i:s");
 
-$conn->query("INSERT INTO contact (name, message, contact_date) VALUES('$name', '$message', '$now')");
+$result = $conn->query("INSERT INTO contact (name, message, contact_date) VALUES('$name', '$message', '$now')");
 
-echo "<h1>Confirmation</h1>
-		<p>Your name is $name and your message is $message.</p>
-";
 ?>
