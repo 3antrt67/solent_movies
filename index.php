@@ -7,20 +7,8 @@
 	<meta charset="UTF-8">
 	<script type="text/javascript" src="js/modal_clear.js"></script>
 </head>
+<?php include('header.php'); ?>
 <body>
-	<div id="navbar-collapse" class="collapse navbar-collapse">
-		<ul class="nav navbar-nav navbar-right">
-			<li>
-				<a class="latestRelease" href="#">New Releases</a>
-			</li>
-			<li>
-				<a class="about" href="#">About</a>
-			</li>
-			<li>
-				<a class="login" href="#">Login</a>
-			</li>
-		</ul>
-	</div>
 	<div class="container">
 	<iframe name="contact" style="display:none;"></iframe>
 	<form method="POST" name="contactForm" role="form" action="process/contact.php" formenctype="multipart/form-data" class="contact-form row" target="contact" onSubmit="show_modal();return;">
