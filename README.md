@@ -1,5 +1,5 @@
 # solent_movies
-![alt text](https://raw.githubusercontent.com/3antrt67/solent_movies/master/images/ssu-logo.svg)
+![alt text](images/ssu-logo.svg)
 
 Assessment - Web Technologies
 
