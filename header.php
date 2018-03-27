@@ -14,7 +14,7 @@
 				<span class="glyphicon glyphicon-log-in"></span> Login</a>
 			</li>
 		</ul>
-	</div>
+</div>
 
 <div id="loginModal" class="modal fade" role="dialog">
 	<div class="modal-dialog">
@@ -69,7 +69,7 @@
 			</div>
 			<div class="g-recaptcha" data-sitekey="6LfsN08UAAAAAHNwMkMpYpcL3gnZvmAhvsnY3WdZ"></div>
 			<br>
-			<button type="submit" class="btn btn-lg">Register</button>
+			<button type="submit" name="submit_reg" id="submit_reg" class="btn btn-lg">Register</button>
 			</br>
 			</form>
 		</div>
