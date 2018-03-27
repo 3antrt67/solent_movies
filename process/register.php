@@ -1,6 +1,5 @@
 <?php
 include "../includes/database.php";
-session_start();
 
 if($_SERVER["REQUEST_METHOD"] === "POST") {
 	
@@ -36,9 +35,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 			$password = md5($password_1);
 			
 			$query = "INSERT INTO users (username, email, password) VALUES('$username', '$email', '$password')";
-			mysqli_query($conn, $query);
-			$_SESSION['username'] = $username;
-			$_SESSION['success'] = "<h1>You are now logged in. Welcome $username!</h1>";
+			$conn->query($query);
+		} else {
+			echo "<h1>An error has occurred</h1>";
 		}
 	}
 }
