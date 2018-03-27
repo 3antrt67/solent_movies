@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 			$username_check = $conn->prepare("SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1");
 			$username_check->execute();
 			if($username_check->rowCount() > 0) {
-					exit("<h1>Username already exists</h1>");
+					exit("<h1>Username and/or Email already exists</h1>");
 				} else {
 					$password = md5($password_1);
 					$query = "INSERT INTO users (username, email, password) VALUES('$username', '$email', '$password')";
