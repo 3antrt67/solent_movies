@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 			}
 			
 			$username_check = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
-			$result = mysqli_query($conn, $username_check);
+			$result = $conn->query($username_check);
 			$user = mysqli_fetch_assoc($result);
 			
 			if($user) {
