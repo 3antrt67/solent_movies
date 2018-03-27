@@ -6,3 +6,8 @@ function clear_form() {
 function show_modal(){
 	  $('#thanksModal').modal('show');
 	}
+	
+function register_modal(){
+		$('#loginModal').modal('hide');
+		$('#registerModal').modal('show');
+}
