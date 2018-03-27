@@ -53,7 +53,7 @@
 			<h4>Registration</h4>
 		</div>
 		<div class="modal-body">
-			<form action="process/register.php">
+			<form method="POST" action="process/register.php">
 			<div class="form-group">
 				<label class="sr-only" for="username">Username</label>
 				<input type="text" class="form-control" placeholder="Username" id="username" name="username">
