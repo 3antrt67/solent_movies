@@ -8,36 +8,30 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 	$response = json_decode($response, true);
 	
 	if($response["success"] === true) {
-		if(isset($_POST['submit'])) {
+		if(isset($_POST['submit_reg'])) {
 			$username = $_POST['username'];
 			$email = $_POST['email_reg'];
 			$password_1 = $_POST['password_1'];
 			$password_2 = $_POST['password_2'];
+		} else {
+			exit("<h1>Please complete the captcha</h1>");
+		}
 			
 			if($password_1 != $password_2) {
-				echo "<h1>Please enter the same password in both fields</h1>";
-			}
-			
-			$username_check = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
-			$result = $conn->query($username_check);
-			$user = mysqli_fetch_assoc($result);
-			
-			if($user) {
-				if($user['username'] === $username) {
-					echo "<h1>Username already exists</h1>";
-				}
+				exit("<h1>Please enter the same password in both fields</h1>");
 				
-				if($user['email'] === $email) {
-					echo "<h1>Email already exists</h1>";
-				}
 			}
 			
-			$password = md5($password_1);
-			
-			$query = "INSERT INTO users (username, email, password) VALUES('$username', '$email', '$password')";
-			$conn->query($query);
-		} else {
-			echo "<h1>An error has occurred</h1>";
-		}
+			$username_check = $conn->prepare("SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1");
+			$username_check->execute();
+			if($username_check->rowCount() > 0) {
+					exit("<h1>Username already exists</h1>");
+				} else {
+					$password = md5($password_1);
+					$query = "INSERT INTO users (username, email, password) VALUES('$username', '$email', '$password')";
+					$conn->query($query);
+				}
+			//$result = $conn->query($username_check);
+			//$user = mysqli_fetch_assoc($result);
 	}
 }
