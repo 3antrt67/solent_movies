@@ -1,5 +1,10 @@
-<?php include('header_auth.php'); ?>
+<?php include('header_auth.php');
+	session_start();
+?>
 <body>
+	<?php if(isset($_SESSION['username'])) : ?>	
+		<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+	<?php endif ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-9">
