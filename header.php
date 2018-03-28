@@ -24,10 +24,10 @@
 			<h4>Login</h4>
 		</div>
 		<div class="modal-body">
-			<form action="process/login.php">
+			<form method="POST" action="process/login.php">
 			<div class="form-group">
-				<label class="sr-only" for="email">Email</label>
-				<input type="email" class="form-control input-sm" placeholder="Email" id="email" name="email">
+				<label class="sr-only" for="usernameLogin">Username</label>
+				<input type="text" class="form-control input-sm" placeholder="Username" id="usernameLogin" name="usernameLogin">
 			</div>
 			<div class="form-group">
 			<label class="sr-only" for="password">Password</label>
@@ -36,7 +36,7 @@
 			<div class="checkbox">
 				<label><input type="checkbox">Remember Me</label>
 			</div>
-			<button type="submit" class="btn btn-info">Sign In</button>
+			<button type="submit" id="signIn" name="signIn" class="btn btn-info">Sign In</button>
 			</form>
 			<br>
 			<button type="button" class="btn btn-default" onClick="register_modal()" data-target="#registerModal">Not Registered?</button>
