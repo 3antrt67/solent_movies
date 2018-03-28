@@ -22,7 +22,7 @@
 				<a class="createMovie" name="createMovie" href="#">Create Page</a>
 			</li>
 			<li>
-				<a data-toggle="modal" class="logout" data-target="#logoutModal">
+				<a href="process/logout.php">
 				<span class="glyphicon glyphicon-log-out"></span> Logout</a>
 			</li>
 		</ul>
