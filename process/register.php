@@ -31,7 +31,5 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 					$query = "INSERT INTO users (username, email, password) VALUES('$username', '$email', '$password')";
 					$conn->query($query);
 				}
-			//$result = $conn->query($username_check);
-			//$user = mysqli_fetch_assoc($result);
 	}
 }
