@@ -1,5 +1,9 @@
 <?php include('header_auth.php');
 	session_start();
+	
+	if(!isset($_SESSION['username'])) {
+		header('Location: index.php');
+	}
 ?>
 <body>
 	<?php if(isset($_SESSION['username'])) : ?>	
