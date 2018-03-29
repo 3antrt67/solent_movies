@@ -1,3 +1,9 @@
+<?php
+include "includes/database.php";
+$query = "SELECT * FROM movies";
+$final = $conn->query($query);
+$counted = $final->rowCount();
+?>
 <head>
 	<title>Solent Movies</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -10,6 +16,13 @@
 <div id="navbar-collapse" class="collapse navbar-collapse">
 		<ul class="nav navbar-nav navbar-left">
 			<img src="images/ssu-logo.svg">
+		</ul>
+		<ul class="nav nabar-nav navbar-left">
+			<form action="process/search.php" method="GET">
+			<label for="search_term">Search from:</label>
+			<input name="search_term" type="text" placeholder="<?php echo $counted . " movie pages.."; ?>" />
+			<input type="submit" name="search" value="Submit" />
+			</form>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li>
