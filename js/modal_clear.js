@@ -3,11 +3,15 @@ function clear_form() {
 		document.getElementById("message").value="";
 	}
 	
-function show_modal(){
+function thanks_modal(){
 	  $('#thanksModal').modal('show');
 	}
 	
 function register_modal(){
 		$('#loginModal').modal('hide');
 		$('#registerModal').modal('show');
+}
+
+function poster_modal(){
+		$('#createMovie').modal('show');
 }
