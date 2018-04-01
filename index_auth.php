@@ -1,10 +1,4 @@
-<?php include('header_auth.php');
-	session_start();
-	
-	if(!isset($_SESSION['username'])) {
-		header('Location: index.php');
-	}
-?>
+<?php include('header_auth.php'); ?>
 <body>
 	<?php if(isset($_SESSION['username'])) : ?>	
 		<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
@@ -64,6 +58,8 @@
 			<textarea class="form-control" id="message" rows="4" name="message"></textarea>
 		</div>
 		<button type="submit" name="submit" id="submit" value="Send" class="btn btn-primary">Submit</button>
+	</form>
+	</div>
 <div class="modal fade" id="thanksModal" tabindex="-1" role="dialog">
 <div class="modal-dialog">
 	<div class="modal-content">
