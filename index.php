@@ -54,7 +54,7 @@
 	</div>
 	<div class="container">
 	<iframe name="contact" style="display:none;"></iframe>
-	<form method="POST" name="contactForm" role="form" action="process/contact.php" formenctype="multipart/form-data" class="contact-form row" target="contact" onSubmit="show_modal();return;">
+	<form method="POST" name="contactForm" role="form" action="process/contact.php" formenctype="multipart/form-data" class="contact-form row" target="contact" onSubmit="thanks_modal();return;">
 		<div class="form-group">
 			<h3>Would you like to get in touch?</h3>
 			<label for="name">Name</label>
@@ -65,6 +65,7 @@
 			<textarea class="form-control" id="message" rows="4" name="message"></textarea>
 		</div>
 		<button type="submit" name="submit" id="submit" value="Send" class="btn btn-primary">Submit</button>
+	</form>
 <div class="modal fade" id="thanksModal" tabindex="-1" role="dialog">
 <div class="modal-dialog">
 	<div class="modal-content">
