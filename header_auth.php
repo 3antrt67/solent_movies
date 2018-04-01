@@ -1,5 +1,10 @@
 <?php
 include "includes/database.php";
+session_start();
+	
+	if(!isset($_SESSION['username'])) {
+		header('Location: index.php');
+	}
 $query = "SELECT * FROM movies";
 $final = $conn->query($query);
 $counted = $final->rowCount();
@@ -32,7 +37,7 @@ $counted = $final->rowCount();
 				<a class="about" href="#">About</a>
 			</li>
 			<li>
-				<a class="createMovie" name="createMovie" href="#">Create Page</a>
+				<a data-toggle="modal" class="createMoviemod" data-target="#createMovie">Create Page</a>
 			</li>
 			<li>
 				<a href="process/logout.php">
@@ -40,3 +45,49 @@ $counted = $final->rowCount();
 			</li>
 		</ul>
 </div>
+
+<div id="createMovie" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h3>Create Page</h3>
+		</div>
+		<div class="modal-body">
+			<form method="POST" action="process/create.php">
+			<div class="form-group">
+				<label class="sr-only" for="filmTitle">Title</label>
+				<input type="text" class="form-control input" placeholder="Title" id="filmTitle" name="filmTitle">
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="poster">Poster/Art</label>
+				<input type="text" class="form-control input" placeholder="https://i.imgur.com/kRVWz0C.png" id="poster" name="poster">
+				<small id="posterHelp" class="form-text text-muted">Please use the full image URL. E.G. https://imgur.com/PxySgh.png</small>
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="directors">Director(s)</label>
+				<input type="text" class="form-control input" placeholder="Director(s)" id="directors" name="directors">
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="actors">Actor(s)</label>
+				<input type="text" class="form-control input" placeholder="Actor(s)" id="actors" name="actors">
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="releaseDate">Release Date - YYYY-MM-DD</label>
+				<input data-format="yyyy/MM/dd" type="text" class="form-control input" placeholder="YYY-MM-DD" id="releaseDate" name="releaseDate">
+			</div>
+			<div class="form-group">
+				<textarea class="form-control" id="synopsis" rows="6" name="synopsis"></textarea>
+			</div>
+			<br>
+			<button type="submit" name="createPage" id="createPage" class="btn btn-success">Create</button>
+			</br>
+			</form>
+		</div>
+	</div>
+	</div>
+</div>
+			
+				
+				
+			
