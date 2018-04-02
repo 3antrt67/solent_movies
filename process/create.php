@@ -9,7 +9,7 @@ if(isset($_POST['createPage'])) {
 	$actors = $_POST['actors'];
 	$release = $_POST['releaseDate'];
 	$synopsis = $_POST['synopsis'];
-	$now = date("Y-m-d | h:i:s");
+	$now = date("Y-m-d | H:i:s");
 	$creator = $_SESSION['username'];
 } else {
 	exit("<h1>Please complete all fields</h1>");
