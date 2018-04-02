@@ -8,6 +8,13 @@ session_start();
 $query = "SELECT * FROM movies";
 $final = $conn->query($query);
 $counted = $final->rowCount();
+$page_count = "SELECT created_by, COUNT(created_time) AS posts FROM `movies` WHERE created_by is not null group by created_by";
+$ex = $conn->query($page_count);
+$users = array();
+while($user = $ex->fetch()) $users[] = $user;
+foreach($users as $u) {
+		printf("<p>Username: %s Posts: %d</p>", $u[0], $u[1]);
+}
 ?>
 <head>
 	<title>Solent Movies</title>
