@@ -46,6 +46,19 @@
 		</div>
 	</div>
 	<div class="container">
+		<table class="topCreate">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Username</th>
+					<th scope="col">No. of Movies</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>
+	<div class="container">
 	<iframe name="contact" style="display:none;"></iframe>
 	<form method="POST" name="contactForm" role="form" action="process/contact.php" formenctype="multipart/form-data" class="contact-form row" target="contact" onSubmit="show_modal();return;">
 		<div class="form-group">
