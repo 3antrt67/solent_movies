@@ -23,11 +23,9 @@ $counted = $final->rowCount();
 			<img src="images/ssu-logo.svg">
 		</ul>
 		<ul class="nav nabar-nav navbar-left">
-			<form action="process/search.php" method="GET">
 			<label for="search_term">Search from:</label>
-			<input name="search_term" type="text" placeholder="<?php echo $counted . " movie pages.."; ?>" />
-			<input type="submit" name="search" value="Submit" />
-			</form>
+			<input id="search_term" name="search_term" type="text" placeholder="<?php echo $counted . " movie pages.."; ?>" />
+			<input type="submit" id="searchMov" name="searchMov" value="Submit" />
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li>
