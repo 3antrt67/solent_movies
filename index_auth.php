@@ -74,6 +74,13 @@
 		</div>
 	</div>
 	<div class="container">
+		<div class="jumbotron">
+			<div class="media-body" id="searchResults">
+				
+			</div>
+		</div>
+	</div>
+	<div class="container">
 	<iframe name="contact" style="display:none;"></iframe>
 	<form method="POST" name="contactForm" role="form" action="process/contact.php" formenctype="multipart/form-data" class="contact-form row" target="contact" onSubmit="show_modal();return;">
 		<div class="form-group">
