@@ -1,8 +1,5 @@
 <?php include('header_auth.php'); ?>
 <body>
-	<?php if(isset($_SESSION['username'])) : ?>	
-		<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-	<?php endif ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-9">
@@ -46,18 +43,36 @@
 		</div>
 	</div>
 	<div class="container">
-		<table class="topCreate">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">#</th>
-					<th scope="col">Username</th>
-					<th scope="col">No. of Movies</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th scope="row">1</th>
-					<td>
+		<div class="table-responsive">
+			<div class="col-md-4">
+				<table class="table table-striped">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Username</th>
+							<th scope="col">No. of Movies</th>
+						</tr>
+					</thead>
+					<tbody>
+					<?php
+					$page_count = "SELECT created_by, COUNT(created_time) AS posts FROM `movies` WHERE created_by is not null group by created_by ORDER BY `posts` DESC LIMIT 10";
+					$ex = $conn->query($page_count);
+					$users = array();
+					$a = 1;
+					while($user = $ex->fetch()) $users[] = $user;
+					foreach($users as $u) {
+						echo "<tr>";
+						printf("<td>%d</td>", $a++);
+						printf("<td>%s</td>", $u[0]);
+						printf("<td>%d</td>", $u[1]);
+						echo "</tr>";
+					}
+					?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 	<div class="container">
 	<iframe name="contact" style="display:none;"></iframe>
 	<form method="POST" name="contactForm" role="form" action="process/contact.php" formenctype="multipart/form-data" class="contact-form row" target="contact" onSubmit="show_modal();return;">
