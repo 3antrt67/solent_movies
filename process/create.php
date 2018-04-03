@@ -22,7 +22,7 @@ if(isset($_POST['createPage'])) {
 		$query = "INSERT INTO movies (poster, name, director, actor, release_date, synopsis, created_by, created_time) VALUES('$poster', '$title', '$directors', '$actors', '$release', '$synopsis', '$creator', '$now')";
 		$conn->query($query);
 		echo("<h1>You have successfully created" . $title . "'s film page!</h1>");
-		sleep(5);
+		sleep(2);
 		header("Location: ../index_auth.php", true, 303);
 		exit;
 }
