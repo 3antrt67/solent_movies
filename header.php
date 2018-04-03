@@ -46,9 +46,6 @@ $counted = $final->rowCount();
 			<label class="sr-only" for="password">Password</label>
 			<input type="password" class="form-control input-sm" placeholder="Password" id="password" name="password">
 			</div>
-			<div class="checkbox">
-				<label><input type="checkbox">Remember Me</label>
-			</div>
 			<button type="submit" id="signIn" name="signIn" class="btn btn-info">Sign In</button>
 			</form>
 			<br>
