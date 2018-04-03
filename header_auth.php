@@ -8,13 +8,6 @@ session_start();
 $query = "SELECT * FROM movies";
 $final = $conn->query($query);
 $counted = $final->rowCount();
-$page_count = "SELECT created_by, COUNT(created_time) AS posts FROM `movies` WHERE created_by is not null group by created_by";
-$ex = $conn->query($page_count);
-$users = array();
-while($user = $ex->fetch()) $users[] = $user;
-foreach($users as $u) {
-		printf("<p>Username: %s Posts: %d</p>", $u[0], $u[1]);
-}
 ?>
 <head>
 	<title>Solent Movies</title>
@@ -47,8 +40,22 @@ foreach($users as $u) {
 				<a data-toggle="modal" class="createMoviemod" data-target="#createMovie">Create Page</a>
 			</li>
 			<li>
-				<a href="process/logout.php">
-				<span class="glyphicon glyphicon-log-out"></span> Logout</a>
+				<nav>
+					<div class="dropdown">
+						<button class="btn btn-success dropdown-toggle" type="button" id="welcomeProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<?php if(isset($_SESSION['username'])) : ?>	
+							Welcome <strong><?php echo $_SESSION['username']; ?></strong>
+							<?php endif ?>
+						</button>
+						<div class="dropdown-menu" aria-labelledby="welcomeProfile">
+							<a class="dropdown-item" href="#">Profile</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">My Films</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="process/logout.php">Logout</a>
+						</div>
+					</div>
+				</nav>	
 			</li>
 		</ul>
 </div>
@@ -81,7 +88,7 @@ foreach($users as $u) {
 			</div>
 			<div class="form-group">
 				<label class="sr-only" for="releaseDate">Release Date - YYYY-MM-DD</label>
-				<input data-format="yyyy/MM/dd" type="text" class="form-control input" placeholder="YYY-MM-DD" id="releaseDate" name="releaseDate">
+				<input data-format="yyyy/MM/dd" type="text" class="form-control input" placeholder="YYYY-MM-DD" id="releaseDate" name="releaseDate">
 			</div>
 			<div class="form-group">
 				<textarea class="form-control" id="synopsis" rows="6" name="synopsis"></textarea>
