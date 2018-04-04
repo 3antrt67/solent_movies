@@ -73,7 +73,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" id="searchOut">
 		<div class="jumbotron">
 			<div class="media-body" id="searchResults">
 				
