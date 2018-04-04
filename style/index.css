@@ -1,0 +1,15 @@
+.searchOut {
+	display: inline-block;
+	height: 250px;
+	width: 250px;
+}
+
+.searchResults img {
+	width: 100px;
+	height: 100px;
+}
+
+.posterFile img {
+	width: 100px;
+	height: 100px;
+}
