@@ -16,6 +16,7 @@ $counted = $final->rowCount();
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style/index.css" type="text/css" />
 	<script type="text/javascript" src="js/modal_clear.js"></script>
 </head>
 <div id="navbar-collapse" class="collapse navbar-collapse">
