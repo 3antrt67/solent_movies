@@ -12,8 +12,9 @@ if ($result->rowCount() == 0) {
 else
 {
 	//keep looping until another record to get
+	echo "<h1>Your search results - </h1>";
 	while($record = $result->fetch()) {
-	  echo "<h1>" . $record["name"] . "</h1>";
+	  echo "<h2>" . $record["name"] . "</h2>";
 	  echo "<td>";
 	  echo "<img src=" . $record["poster"] . " />";
 	  echo "<p>Director: " . $record["director"] . "</p>";
