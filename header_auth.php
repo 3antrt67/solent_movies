@@ -23,7 +23,7 @@ $counted = $final->rowCount();
 		<ul class="nav navbar-nav navbar-left">
 			<img src="images/ssu-logo.svg">
 		</ul>
-		<ul class="nav nabar-nav navbar-left">
+		<ul class="nav navbar-nav navbar-left" id="searchWin">
 			<label for="search_term">Search from:</label>
 			<input id="search_term" name="search_term" type="text" placeholder="<?php echo $counted . " movie pages.."; ?>" />
 			<input type="submit" id="searchMov" name="searchMov" value="Submit" />
