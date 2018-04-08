@@ -15,6 +15,7 @@ $counted = $final->rowCount();
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="style/index.css" type="text/css" />
 	<script type="text/javascript" src="js/modal_clear.js"></script>
