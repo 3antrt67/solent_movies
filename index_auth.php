@@ -42,9 +42,11 @@
 			</div>
 		</div>
 	</div>
+	<br></br>
 	<div class="container">
+		<h2 id="top">Our Top Contributors:</h2>
 		<div class="table-responsive">
-			<div class="col-md-4">
+			<div class="col-sm">
 				<table class="table table-striped">
 					<thead class="thead-dark">
 						<tr>
@@ -73,8 +75,9 @@
 			</div>
 		</div>
 	</div>
+	<br></br>
 	<div class="container" id="searchOut">
-		<div class="jumbotron">
+		<div class="jumbotron" id="resShow">
 			<div class="media-body" id="searchResults">
 				
 			</div>
@@ -107,6 +110,20 @@
 		<div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal" onclick="clear_form()">Close</button>
 		</div>
+	</div>
+</div>
+</div>
+<div class="modal fade" id="filmModal" tabindex="-1" role="dialog">
+<div class="modal-dialog">
+	<div class="modal-header">
+		<h3 class="modal-title" id="filmLabel"></h4>
+	</div>
+	<div class="modal-body" id="filmBody">
+	
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" id="modifyPage">Modify Page</button>
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	</div>
 </div>
 </div>
