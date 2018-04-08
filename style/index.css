@@ -16,3 +16,14 @@
 	width: 200px;
 	height: 300px;
 }
+
+#top {
+	background-color: #D2383D;
+	border: 2px solid;
+}
+
+.table-responsive {
+  border: 2px solid #42b983;
+  border-radius: 3px;
+  background-color: #fff;
+}
