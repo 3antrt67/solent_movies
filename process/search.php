@@ -12,14 +12,18 @@ if ($result->rowCount() == 0) {
 else
 {
 	//keep looping until another record to get
-	echo "<h1>Your search results - </h1>";
+	echo '<h1>Your search results - </h1>';
+	$div_count = 0;
 	while($record = $result->fetch()) {
-	  echo "<h2>" . $record["name"] . "</h2>";
+	  echo '<div class="searchRes" id="filmPage' . $div_count++ . '">';
+	  //echo '<div class="searchRes" id="filmPage' . $div_count++ . '">';
+	  echo '<h2 id="headTitle" v-on:click="select($event)">' . $record["name"] . '</h2>';
 	  echo "<td>";
 	  echo "<img src=" . $record["poster"] . " />";
 	  echo "<p>Director: " . $record["director"] . "</p>";
 	  echo "<p>Actors: " . $record["actor"] . "</p>";
 	  echo "<p>" . $record["release_date"] . "</p>";
+	  echo '</div>';
 	}
 }
 ?>
