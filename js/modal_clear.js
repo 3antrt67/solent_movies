@@ -12,13 +12,7 @@ function register_modal(){
 		$('#registerModal').modal('show');
 }
 
-function poster_modal(){
-		$('#createMovie').modal('show');
-}
-
-//window.onload = function() {
-	//document.getElementById('searchMov').addEventListener('click', searchCon);
-//}
+$('#createMovie').modal('show')
 
 function getFilm() {
 	//var film = document.getElementById("filmPage");
