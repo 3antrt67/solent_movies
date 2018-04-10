@@ -40,7 +40,7 @@ $counted = $final->rowCount();
 				<a class="about" href="#">About</a>
 			</li>
 			<li>
-				<button type="button" class="btn" data-toggle="modal" data-target="#createMovie">Create Page</button>
+				<a href="#createMovie" data-toggle="modal" data-target="#createMovie">Create Page</a>
 			</li>
 			<li>
 				<nav>
