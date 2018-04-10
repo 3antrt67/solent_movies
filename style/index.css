@@ -5,15 +5,15 @@
 }
 
 .navbar {
-	background-color: #333;
+	background-color: whitesmoke;
 }
 
 .navbar.navbar-nav.navbar-left {
 	display: inline-block;
 }
 
-.jumbotron img {
-	width: 200px;
+.card img {
+	width: 250px;
 	height: 300px;
 }
 
