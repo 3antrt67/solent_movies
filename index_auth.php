@@ -1,5 +1,4 @@
 <?php include('header_auth.php'); ?>
-<body>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-9">
@@ -76,11 +75,30 @@
 		</div>
 	</div>
 	<br></br>
-	<div class="container" id="searchOut">
-		<div class="jumbotron" id="resShow">
-			<div class="media-body" id="searchResults">
-				
-			</div>
+	<div class="container">
+    <h2 class="page-header text-left">Search results:</h2>
+        <div id="movies">
+            <div class="col-md-8 col-md-offset-2">
+                <b-card-group deck v-for="movie in movies">
+                    <b-card v-bind:title="movie.name"
+                            v-bind:img-src="movie.poster"
+                            img-alt="Poster"
+                            img-top>
+                        <p>
+                            {{ movie.synopsis }}
+                        </p>
+                        <p>
+                            Director(s): {{ movie.director }}
+                        </p>
+                        <p>
+                            Actor(s): {{ movie.actor }}
+                        </p>
+                        <div slot="footer">
+                            <small class="text-muted">Created by: {{ movie.created_by }} at {{ movie.created_time }}</small>
+                        </div>
+                    </b-card>
+            	</b-card-group>
+        	</div>
 		</div>
 	</div>
 	<div class="container">
@@ -127,6 +145,9 @@
 	</div>
 </div>
 </div>
-		
+<script src="test_vue.js"></script>	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
 </html>
