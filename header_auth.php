@@ -11,19 +11,25 @@ $counted = $final->rowCount();
 ?>
 <head>
 	<title>Solent Movies</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<meta charset-"utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="style/index.css" type="text/css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	<script src='https://www.google.com/recaptcha/api.js'></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="style/index.css" type="text/css" />
+	<script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
 	<script type="text/javascript" src="js/modal_clear.js"></script>
 </head>
-<div id="navbar-collapse" class="collapse navbar-collapse">
-		<ul class="nav navbar-nav navbar-left">
+<body>
+<div class="container">
+	<nav class="navbar">
+		<a class="navbar-brand" href="#">
 			<img src="images/ssu-logo.svg">
-		</ul>
+		</a>
 		<ul class="nav navbar-nav navbar-left" id="searchWin">
 			<label for="search_term">Search from:</label>
 			<input id="search_term" name="search_term" type="text" placeholder="<?php echo $counted . " movie pages.."; ?>" />
@@ -31,13 +37,10 @@ $counted = $final->rowCount();
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li>
-				<a class="latestRelease" href="#">New Releases</a>
-			</li>
-			<li>
 				<a class="about" href="#">About</a>
 			</li>
 			<li>
-				<a data-toggle="modal" class="createMoviemod" data-target="#createMovie">Create Page</a>
+				<button type="button" class="btn" data-toggle="modal" data-target="#createMovie">Create Page</button>
 			</li>
 			<li>
 				<nav>
@@ -57,15 +60,14 @@ $counted = $final->rowCount();
 					</div>
 				</nav>	
 			</li>
-		</ul>
+	</nav>
 </div>
-
-<div id="createMovie" class="modal fade" role="dialog">
-	<div class="modal-dialog">
+<div id="createMovie" class="modal fade" role="dialog" tabindex="-1">
+	<div class="modal-dialog" role="document">
 	<div class="modal-content">
 		<div class="modal-header">
+			<h3>Create Page</h3>	
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
-			<h3>Create Page</h3>
 		</div>
 		<div class="modal-body">
 			<form method="POST" action="process/create.php">
