@@ -9,21 +9,21 @@
 						<li data-target="#highlightIndicator" data-slide-to="2"></li>
 					</ol>
 					<div class="carousel-inner" role="listbox">
-						<div class="item active">
+						<div class="carousel-item active">
 							<img class="d-block img-fluid" src="https://res.cloudinary.com/dfv2t9quc/image/upload/v1521895123/Avengers-Infinity-War-poster-slice-2-700x300.webp" alt="First slide">
 							<div class="carousel-caption d-none d-md-block">
 								<h5>Avengers Infinity War</h5>
 								<p>Our heroes face their greatest threat yet from across the cosmos.</p>
 							</div>
 						</div>
-						<div class="item">
+						<div class="carousel-item">
 							<img class="d-block img-fluid" src="https://res.cloudinary.com/dfv2t9quc/image/upload/v1521895268/Ready-Player-One-poster-digital-addicts-VR-movie-poster.jpg" alt="Second slide">
 							<div class="carousel-caption d-none d-md-block">
 								<h5>Ready Player One</h5>
 								<p>Steven Spielberg's encomium of gaming and pop culture revolves around a VR playground of the future.</p>
 							</div>
 						</div>
-						<div class="item">
+						<div class="carousel-item">
 							<img class="d-block img-fluid" src="https://res.cloudinary.com/dfv2t9quc/image/upload/v1521895528/Bill-Murray-from-Isle-of-Dogs.jpg" alt="Third slide">
 							<div class="carousel-caption d-none d-md-block">
 								<h5>Isle of Dogs</h5>
@@ -31,11 +31,13 @@
 							</div>
 						</div>
 					</div>
-					<a class="left carousel-control" href="#highlightIndicator" data-slide="prev">
-						<span class="glyphicon glyphicon-chevron-left"></span>
+					<a class="carousel-control-prev" href="#highlightIndicator" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
 					</a>
-					<a class="right carousel-control" href="#highlightIndicator" data-slide="next">
-						<span class="glyphicon glyphicon-chevron-right"></span>
+					<a class="carousel-control-next" href="#highlightIndicator" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
 					</a>
 				</div>
 			</div>
@@ -145,9 +147,6 @@
 	</div>
 </div>
 </div>
-<script src="test_vue.js"></script>	
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="test_vue.js"></script>
 </body>
 </html>
