@@ -16,8 +16,7 @@ else
 	$div_count = 0;
 	while($record = $result->fetch()) {
 	  echo '<div class="searchRes" id="filmPage' . $div_count++ . '">';
-	  //echo '<div class="searchRes" id="filmPage' . $div_count++ . '">';
-	  echo '<h2 id="headTitle" v-on:click="select($event)">' . $record["name"] . '</h2>';
+	  echo '<h2>' . $record["name"] . '</h2>';
 	  echo "<td>";
 	  echo "<img src=" . $record["poster"] . " />";
 	  echo "<p>Director: " . $record["director"] . "</p>";
