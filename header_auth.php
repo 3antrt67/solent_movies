@@ -14,9 +14,13 @@ $counted = $final->rowCount();
 	<meta charset-"utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+	<link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="style/index.css" type="text/css"/>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 	<script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -42,24 +46,20 @@ $counted = $final->rowCount();
 			<li>
 				<a href="#createMovie" data-toggle="modal" data-target="#createMovie">Create Page</a>
 			</li>
-			<li>
-				<nav>
-					<div class="dropdown">
-						<button class="btn btn-success dropdown-toggle" type="button" id="welcomeProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<?php if(isset($_SESSION['username'])) : ?>	
-							Welcome <strong><?php echo $_SESSION['username']; ?></strong>
-							<?php endif ?>
-						</button>
-						<div class="dropdown-menu" aria-labelledby="welcomeProfile">
-							<a class="dropdown-item" href="#">Profile</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">My Films</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="process/logout.php">Logout</a>
-						</div>
-					</div>
-				</nav>	
-			</li>
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" id="navbarDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<?php if(isset($_SESSION['username'])) : ?>	
+						Hello <strong><?php echo $_SESSION['username']; ?></strong>
+					<?php endif ?>
+				</button>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">Profile</a>
+					<a class="dropdown-item" href="#">My Films</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="process/logout.php">Logout</a>
+				</div>
+			</div>
+		</ul>
 	</nav>
 </div>
 <div id="createMovie" class="modal fade" role="dialog" tabindex="-1">
