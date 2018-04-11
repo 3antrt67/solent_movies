@@ -12,6 +12,12 @@
 	display: inline-block;
 }
 
+.carousel-inner img {
+	margin: auto;
+	height: 300px;
+	width: 700px;
+}
+
 .card img {
 	width: 250px;
 	height: 300px;
