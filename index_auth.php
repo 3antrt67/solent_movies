@@ -78,8 +78,23 @@
 	</div>
 	<br></br>
 	<div class="container">
-    <h2 class="page-header text-left">Search results:</h2>
+    <h2 class="page-header text-left">Search Movie database:</h2>
         <div id="movies">
+		<div class="alert alert-danger text-center" v-if="errorMessage">
+			<button type="button" class="close" @click="clearMessage();"><span aria-hidden="true">&times;</span></button>
+			{{ errorMessage }}
+		</div>
+		<div class="alert alert-danger text-center" v-if="noMovie">
+			<button type="button" class="close" @click="clearMessage();"><span aria-hidden="true">&times;</span></button>
+			No movie has been found... Please try again.
+		</div>
+ 		<div class="alert alert-success text-center" v-if="successMessage">
+			<button type="button" class="close" @click="clearMessage();"><span aria-hidden="true">&times;</span></button>
+			{{ successMessage }}
+		</div>
+		</br>
+		<input type="text" class="form-control" placeholder="<?php echo $counted . " movie pages.."; ?>" v-on:keyup.enter="searchMonitor" v-model="search.keyword">
+		</br>
             <div class="col-md-8 col-md-offset-2">
                 <b-card-group deck v-for="movie in movies">
                     <b-card v-bind:title="movie.name"
@@ -94,7 +109,8 @@
                         </p>
                         <p>
                             Actor(s): {{ movie.actor }}
-                        </p>
+						</p>
+						<button class="btn btn-success" @click="showEditModal = true; selectMovie(movie);">Edit Page</button>
                         <div slot="footer">
                             <small class="text-muted">Created by: {{ movie.created_by }} at {{ movie.created_time }}</small>
                         </div>
@@ -147,6 +163,6 @@
 	</div>
 </div>
 </div>
-<script src="test_vue.js"></script>
+<script src="js/search_vue.js"></script>
 </body>
 </html>
