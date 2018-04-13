@@ -7,7 +7,7 @@ var app = new Vue({
 		search: {keyword: ""},
 		movies: [],
 		noMovie: false,
-		clickMember: {}
+		clickPage: {}
 	},
  
 	//mounted: function(){
@@ -41,11 +41,11 @@ var app = new Vue({
 		},
 
 		updateFilm() {
-			var movForm = app.toFormData(app.clickMember);
+			var movForm = app.toFormData(app.clickPage);
 			axios.post('search_auth.php?movie=modify', movForm)
 					.then(function(response) {
 						console.log(response);
-						app.clickMember = {};
+						app.clickPage = {};
 						if(response.data.error) {
 							app.errorMessage = response.data.message;
 						}
@@ -55,8 +55,8 @@ var app = new Vue({
 					});
 		},
 
-		selectMember(member){
-			app.clickMember = member;
+		selectMovie(movie){
+			app.clickPage = movie;
 		},
 		
 		toFormData: function(obj) {
