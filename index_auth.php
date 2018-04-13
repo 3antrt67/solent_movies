@@ -110,7 +110,7 @@
                         <p>
                             Actor(s): {{ movie.actor }}
 						</p>
-						<button class="btn btn-success" @click="showEditModal = true; selectMovie(movie);">Edit Page</button>
+						<button class="btn btn-success" @click="showEditModal = true; selectMember(member);">Edit Page</button>
                         <div slot="footer">
                             <small class="text-muted">Created by: {{ movie.created_by }} at {{ movie.created_time }}</small>
                         </div>
