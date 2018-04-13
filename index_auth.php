@@ -110,15 +110,38 @@
                         <p>
                             Actor(s): {{ movie.actor }}
 						</p>
-						<button class="btn btn-success" @click="showEditModal = true; selectMember(member);">Edit Page</button>
+						<button class="btn btn-success" @click="showEditModal=true">Edit Page</button>
                         <div slot="footer">
                             <small class="text-muted">Created by: {{ movie.created_by }} at {{ movie.created_time }}</small>
                         </div>
                     </b-card>
             	</b-card-group>
         	</div>
+			<b-modal id="editModal" ref="editModal" title="Edit Film Page" @ok="updateFilm()" v-model="showEditModal">
+				<b-form>
+	    			<b-form-group id="titleInputGroup" label="Title:" label-for="titleInput">
+	        			<b-form-input id="titleInput" type="text" v-model="clickPage.title"></b-form-input>
+					</b-form-group>
+					<b-form-group id="posterInputGroup" label="Poster:" label-for="posterInput">
+		    			<b-form-input id="posterInput" type="text" v-model="clickPage.poster"></b-form-input>
+					</b-form-group>
+					<b-form-group id="directorInputGroup" label="Director(s):" label-for="directorInput">
+		    			<b-form-input id="directorInput" type="text" v-model="clickPage.director"></b-form-input>
+					</b-form-group>
+					<b-form-group id="actorInputGroup" label="Actor(s):" label-for="actorInput">
+						<b-form-input id="actorInput" type="text" v-model="clickPage.actor"></b-form-input>
+					</b-form-group>
+					<b-form-group id="releaseInputGroup" label="Release Date:" label-for="releaseInput">
+		    			<b-form-input id="releaseInput" type="text" v-model="clickPage.release"></b-form-input>
+					</b-form-group>
+					<b-form-group id="synopsisInputGroup" label="Synopsis:" label-for="synopsisInput">
+		    			<b-form-input id="synopsisInput" type="text" v-model="clickPage.synopsis"></b-form-input>
+					</b-form-group>
+				</b-form>
+			</b-modal>
 		</div>
 	</div>
+	
 	<div class="container">
 	<iframe name="contact" style="display:none;"></iframe>
 	<form method="POST" name="contactForm" role="form" action="process/contact.php" formenctype="multipart/form-data" class="contact-form row" target="contact" onSubmit="show_modal();return;">
@@ -146,20 +169,6 @@
 		<div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal" onclick="clear_form()">Close</button>
 		</div>
-	</div>
-</div>
-</div>
-<div class="modal fade" id="filmModal" tabindex="-1" role="dialog">
-<div class="modal-dialog">
-	<div class="modal-header">
-		<h3 class="modal-title" id="filmLabel"></h4>
-	</div>
-	<div class="modal-body" id="filmBody">
-	
-	</div>
-	<div class="modal-footer">
-		<button type="button" class="btn btn-default" id="modifyPage">Modify Page</button>
-		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	</div>
 </div>
 </div>
