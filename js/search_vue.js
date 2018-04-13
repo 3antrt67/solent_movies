@@ -17,7 +17,7 @@ var app = new Vue({
 	methods:{
 		searchMonitor: function() {
 			var keyword = app.toFormData(app.search);
-			axios.post('search_test.php?action=search', keyword)
+			axios.post('search_vue.php?action=search', keyword)
 					.then(function(response) {
 						app.movies = response.data.movies;
 
