@@ -26,20 +26,9 @@ function getFilm() {
 	alert('The film is -' + fin);
 }
 
-window.onload = function() {
-	document.getElementById('searchMov').addEventListener('click', searchCon);
-	var searchResults = new Vue({
-		el: '#headTitle',
-		data: {
-		},
-		methods: {
-			select: function(event) {
-				alert(this);
-				targetId = event.currentTarget.id;
-				console.log(targetId);
-			}
-		}
-	});
+var el = document.getElementById('searchMov');
+if(el) {
+	el.addEventListener('click', searchCon);
 }
 
 function searchCon() {
