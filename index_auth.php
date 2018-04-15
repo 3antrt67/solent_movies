@@ -110,7 +110,7 @@
                         <p>
                             Actor(s): {{ movie.actor }}
 						</p>
-						<button class="btn btn-success" @click="showEditModal=true">Edit Page</button>
+						<button class="btn btn-success" @click="showEditModal=true; selectMovie(movie);">Edit Page</button>
                         <div slot="footer">
                             <small class="text-muted">Created by: {{ movie.created_by }} at {{ movie.created_time }}</small>
                         </div>
@@ -120,7 +120,7 @@
 			<b-modal id="editModal" ref="editModal" title="Edit Film Page" @ok="updateFilm()" v-model="showEditModal">
 				<b-form>
 	    			<b-form-group id="titleInputGroup" label="Title:" label-for="titleInput">
-	        			<b-form-input id="titleInput" type="text" v-model="clickPage.title"></b-form-input>
+	        			<b-form-input id="titleInput" type="text" v-model="clickPage.name"></b-form-input>
 					</b-form-group>
 					<b-form-group id="posterInputGroup" label="Poster:" label-for="posterInput">
 		    			<b-form-input id="posterInput" type="text" v-model="clickPage.poster"></b-form-input>
@@ -132,7 +132,7 @@
 						<b-form-input id="actorInput" type="text" v-model="clickPage.actor"></b-form-input>
 					</b-form-group>
 					<b-form-group id="releaseInputGroup" label="Release Date:" label-for="releaseInput">
-		    			<b-form-input id="releaseInput" type="text" v-model="clickPage.release"></b-form-input>
+		    			<b-form-input id="releaseInput" type="text" v-model="clickPage.release_date"></b-form-input>
 					</b-form-group>
 					<b-form-group id="synopsisInputGroup" label="Synopsis:" label-for="synopsisInput">
 		    			<b-form-input id="synopsisInput" type="text" v-model="clickPage.synopsis"></b-form-input>
