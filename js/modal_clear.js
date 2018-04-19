@@ -12,6 +12,7 @@ function register_modal(){
 		$('#registerModal').modal('show');
 }
 
+$('#createActor').modal('show')
 $('#createMovie').modal('show')
 
 function getFilm() {
