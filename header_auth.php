@@ -50,10 +50,13 @@ $counted = $final->rowCount();
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li>
-				<a class="about" href="#">About</a>
+				<a class="dash" href="dashboard.php">Dashboard</a>
 			</li>
 			<li>
-				<a href="#createMovie" data-toggle="modal" data-target="#createMovie">Create Page</a>
+				<a href="#" data-toggle="modal" data-target="#createActor" v-on:click="showActorModal = true">Create Actor</a>
+			</li>
+			<li>
+				<a href="#createMovie" data-toggle="modal" data-target="#createMovie">Create Film</a>
 			</li>
 			<div class="dropdown">
 				<button class="btn btn-secondary dropdown-toggle" id="navbarDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -111,7 +114,45 @@ $counted = $final->rowCount();
 		</div>
 	</div>
 	</div>
+</div>	
+<div id="createActor" class="modal fade" role="dialog" tabindex="-1">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3>Create Actor Page</h3>	
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<div class="alert alert-danger text-center" v-if="errorMessage">
+					<button type="button" class="close" @click="clearMessage();"><span aria-hidden="true">&times;</span></button>
+					{{ errorMessage }}
+				</div>
+				<div class="alert alert-success text-center" v-if="successMessage">
+					<button type="button" class="close" @click="clearMessage();"><span aria-hidden="true">&times;</span></button>
+					{{ successMessage }}
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control input" placeholder="Name" id="actorName" name="actorName" v-model="actor.name">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control input" placeholder="https://i.imgur.com/kRVWz0C.png" id="actorProfile" name="actorProfile" v-model="actor.profile">
+					<small id="profileHelp" class="form-text text-muted">Please use the full image URL. E.G. https://imgur.com/PxySgh.png</small>
+				</div>	
+				<div class="form-group">
+					<input class="form-control input" type="text" placeholder="Age" id="actorAge" name="actorAge" v-model="actor.age">
+				</div>
+				<div class="form-group">
+					<textarea class="form-control input" placeholder="Bio" id="actorBio" rows="5" name="actorBio" v-model="actor.bio"></textarea>
+				</div>
+				<br>
+				<button type="submit" name="createActor" id="createActor" class="btn btn-success" v-on:click="createPage();">Create</button>
+				</br>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
+<script type="text/javascript" src="create_actor_vue.js"></script>
 			
 				
 				
