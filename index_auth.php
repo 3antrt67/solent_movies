@@ -141,37 +141,9 @@
 			</b-modal>
 		</div>
 	</div>
-	
 	<div class="container">
-	<iframe name="contact" style="display:none;"></iframe>
-	<form method="POST" name="contactForm" role="form" action="process/contact.php" formenctype="multipart/form-data" class="contact-form row" target="contact" onSubmit="show_modal();return;">
-		<div class="form-group">
-			<h3>Would you like to get in touch?</h3>
-			<label for="name">Name</label>
-			<input type="text" name="name" class="form-control" id="name" placeholder="Please enter your name">
-		</div>
-		<div class="form-group">
-			<label for="message">Please tell me about your query.</label>
-			<textarea class="form-control" id="message" rows="4" name="message"></textarea>
-		</div>
-		<button type="submit" name="submit" id="submit" value="Send" class="btn btn-primary">Submit</button>
-	</form>
-	</div>
-<div class="modal fade" id="thanksModal" tabindex="-1" role="dialog">
-<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			<h4 class="modal-title" id="modalLabel">Thanks for getting in contact!</h4>
-		</div>
-		<div class="modal-body">
-			<p>I will endeavour to be in touch as soon as possible!</p>
-		</div>
-		<div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal" onclick="clear_form()">Close</button>
-		</div>
-	</div>
-</div>
-</div>
+	<h2 class="page-header text-left">Recently Added:</h2>
+	    <div id="recentlyAdded">
 <script src="js/search_vue.js"></script>
 </body>
 </html>
