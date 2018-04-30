@@ -27,11 +27,6 @@ function getFilm() {
 	alert('The film is -' + fin);
 }
 
-var el = document.getElementById('searchMov');
-if(el) {
-	el.addEventListener('click', searchCon);
-}
-
 function searchCon() {
 		var search = document.getElementById("search_term");
 		var dataString = 'search_term=' + search.value;
