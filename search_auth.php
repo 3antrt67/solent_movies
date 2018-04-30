@@ -1,7 +1,10 @@
 <?php
 include "includes/database.php";
+session_start();
 
 $out = array('error' => false);
+$now = date("Y-m-d | H:i:s");
+$creator = $_SESSION['username'];
 
 $movie = 'modify';
 
@@ -16,6 +19,8 @@ if($movie == 'modify'){
     $synopsis = $_POST['synopsis'];
 
     $sql = "UPDATE movies SET name='$title', poster='$poster', director='$director', actor='$actor', release_date ='$release', synopsis='$synopsis' WHERE id ='$movid'";
+    $change = "INSERT INTO `modifications` (page, author, time) VALUES('$title', '$creator', '$now')";
+    $conn->query($change);
     $query = $conn->query($sql);
 
     if($query) {
