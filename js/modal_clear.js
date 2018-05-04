@@ -39,7 +39,6 @@ function searchCon() {
 			data: dataString,
 			cache: false,
 			success: function(response) {
-				alert(response);
 				$("#searchResults").html(response);
 				}
 			});
