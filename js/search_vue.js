@@ -2,6 +2,7 @@ var app = new Vue({
 	el: '#movies',
 	data:{
 		showEditModal: false,
+		showCommentModal: false,
 		errorMessage: "",
 		successMessage: "",
 		search: {keyword: ""},
@@ -45,6 +46,20 @@ var app = new Vue({
 			axios.post('search_auth.php?movie=modify', movForm)
 					.then(function(response) {
 						console.log(response);
+						app.clickPage = {};
+						if(response.data.error) {
+							app.errorMessage = response.data.message;
+						}
+						else {
+							app.successMessage = response.data.message;
+						}
+					});
+		},
+
+		addComment() {
+			var movForm = app.toFormData(app.clickPage);
+			axios.post('process/add_comment.php', movForm)
+					.then(function(response) {
 						app.clickPage = {};
 						if(response.data.error) {
 							app.errorMessage = response.data.message;
