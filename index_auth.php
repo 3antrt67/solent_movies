@@ -111,7 +111,16 @@
                             Actor(s): {{ movie.actor }}
 						</p>
 						<button class="btn btn-success" @click="showEditModal=true; selectMovie(movie);">Edit Page</button>
-                        <div slot="footer">
+						<button class="btn" @click="showCommentModal=true; selectMovie(movie);">Add Comment</button>
+						<b-btn v-b-toggle.comments variant="primary">View Comments</b-btn>
+						<b-collapse id="comments" class="mt-2">
+							<b-card v-for="comment in comments">
+								<h3>{{ comment.username }}</h3>
+								<p>{{ comment.timestamp }}</p>
+								<p>{{ comment.content }}</p>
+							</b-card>
+						</b-collapse>
+        				<div slot="footer">
                             <small class="text-muted">Created by: {{ movie.created_by }} at {{ movie.created_time }}</small>
                         </div>
                     </b-card>
@@ -136,6 +145,13 @@
 					</b-form-group>
 					<b-form-group id="synopsisInputGroup" label="Synopsis:" label-for="synopsisInput">
 		    			<b-form-input id="synopsisInput" type="text" v-model="clickPage.synopsis"></b-form-input>
+					</b-form-group>
+				</b-form>
+			</b-modal>
+			<b-modal id="commentModal" ref="commentModal" title="Add Comment" @ok="addComment()" v-model="showCommentModal">
+				<b-form>
+	    			<b-form-group id="commentInputGroup" label="Comment:" label-for="commentInput">
+	        			<b-form-textarea id="commentInput" :rows="3" :max-rows="6" v-model="clickPage.comment"></b-form-textarea>
 					</b-form-group>
 				</b-form>
 			</b-modal>
