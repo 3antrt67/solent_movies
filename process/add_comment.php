@@ -19,3 +19,9 @@ else {
     $out['error'] = true;
     $out['message'] = "Could not add comment";
 }
+
+header("Content-type: application/json");
+echo json_encode($out);
+die();
+
+?>
