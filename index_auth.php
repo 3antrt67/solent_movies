@@ -112,13 +112,16 @@
 						</p>
 						<button class="btn btn-success" @click="showEditModal=true; selectMovie(movie);">Edit Page</button>
 						<button class="btn" @click="showCommentModal=true; selectMovie(movie);">Add Comment</button>
-						<b-btn v-b-toggle.comments variant="primary">View Comments</b-btn>
-						<b-collapse id="comments" class="mt-2">
-							<b-card v-for="comment in comments">
-								<h3>{{ comment.username }}</h3>
-								<p>{{ comment.timestamp }}</p>
-								<p>{{ comment.content }}</p>
-							</b-card>
+						<b-btn v-b-toggle.coms @click="selectMovie(movie); getComments();" variant="primary">View Comments</b-btn>
+						<b-collapse id="coms" class="mt-2">
+							<b-card-group deck v-for="comment in comments">
+								<b-card v-bind:title="comment.username">
+									<p>{{ comment.content }}</p>
+									<div slot="footer">
+										<small class="text-muted">{{ comment.timestamp }}</small>
+									</div>
+								</b-card>
+							</b-card-group>
 						</b-collapse>
         				<div slot="footer">
                             <small class="text-muted">Created by: {{ movie.created_by }} at {{ movie.created_time }}</small>
