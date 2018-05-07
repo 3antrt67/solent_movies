@@ -7,6 +7,7 @@ var app = new Vue({
 		successMessage: "",
 		search: {keyword: ""},
 		movies: [],
+		comments: [],
 		noMovie: false,
 		clickPage: {}
 	},
@@ -66,6 +67,20 @@ var app = new Vue({
 						}
 						else {
 							app.successMessage = response.data.message;
+						}
+					});
+		},
+
+		getComments() {
+			var movForm = app.toFormData(app.clickPage);
+			axios.post('process/get_comments.php', movForm)
+					.then(function(response) {
+						if(response.data.error) {
+							console.log(response.data);
+						}
+						else {
+							app.comments = response.data.comments;
+							app.clickPage = {};
 						}
 					});
 		},
