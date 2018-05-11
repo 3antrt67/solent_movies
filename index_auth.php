@@ -110,6 +110,9 @@
                         <p>
                             Actor(s): {{ movie.actor }}
 						</p>
+						<p>
+							Metascore: {{ movie.metacritic }}
+						</p>
 						<button class="btn btn-success" @click="showEditModal=true; selectMovie(movie);">Edit Page</button>
 						<button class="btn" @click="showCommentModal=true; selectMovie(movie);">Add Comment</button>
 						<b-btn v-b-toggle.coms @click="selectMovie(movie); getComments();" variant="primary">View Comments</b-btn>
