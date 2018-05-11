@@ -21,5 +21,5 @@ if($action == 'search'){
 header("Content-type: application/json");
 echo json_encode($out);
 die();
- 
+
 ?>
