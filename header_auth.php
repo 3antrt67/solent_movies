@@ -65,7 +65,7 @@ $counted = $final->rowCount();
 					<?php endif ?>
 				</button>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#">Profile</a>
+					<a class="dropdown-item" href="process/change_password.php">Change Password</a>
 					<a class="dropdown-item" href="#">My Films</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="process/logout.php">Logout</a>
