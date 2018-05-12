@@ -37,3 +37,5 @@ if(isset($_POST['signIn'])) {
 		exit("<h1>Wrong username/password has been entered");
 	}
 }
+
+?>
