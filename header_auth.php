@@ -8,6 +8,9 @@ session_start();
 $query = "SELECT * FROM movies";
 $final = $conn->query($query);
 $counted = $final->rowCount();
+$actors_count = "SELECT * FROM actors";
+$count = $conn->query($actors_count);
+$act = $count->rowCount();
 ?>
 <head>
 	<title>Solent Movies</title>
@@ -52,6 +55,8 @@ $counted = $final->rowCount();
 			<li>
 				<a class="dash" href="dashboard.php">Dashboard</a>
 			</li>
+			<li>
+				<a class="actors" href="actor_page.php">Search Actors</a>
 			<li>
 				<a href="#" data-toggle="modal" data-target="#createActor" v-on:click="showActorModal = true">Create Actor</a>
 			</li>
