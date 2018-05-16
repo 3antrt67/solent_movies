@@ -115,6 +115,7 @@
 						</p>
 						<button class="btn btn-success" @click="showEditModal=true; selectMovie(movie);">Edit Page</button>
 						<button class="btn" @click="showCommentModal=true; selectMovie(movie);">Add Comment</button>
+						<button class="btn btn-danger" @click="selectMovie(movie); deleteFilm();">Delete Page</button>
 						<b-btn v-b-toggle.coms @click="selectMovie(movie); getComments();" variant="primary">View Comments</b-btn>
 						<b-collapse id="coms" class="mt-2">
 							<b-card-group deck v-for="comment in comments">
@@ -163,9 +164,6 @@
 			</b-modal>
 		</div>
 	</div>
-	<div class="container">
-	<h2 class="page-header text-left">Recently Added:</h2>
-	    <div id="recentlyAdded">
 <script src="js/search_vue.js"></script>
 </body>
 </html>
