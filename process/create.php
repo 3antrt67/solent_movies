@@ -27,7 +27,7 @@ if(isset($_POST['createPage'])) {
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 		$headers = [
-    		'X-Mashape-Key: 7gZBID6E0qmshW2KB4oR1PCBKJrWp1crEp9jsn78idKvabQ2A9',
+    		'X-Mashape-Key: ##########################################',
     		'Accept: application/json'
 		];
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
